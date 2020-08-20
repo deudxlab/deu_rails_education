@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+안녕하세요 2020 동의대학교 김성희 교수님이 Ruby On Rails 강의 자료에 사용한 코드 입니다.
 
-Things you may want to cover:
+#사용 환경
+- 구름IDE
+- Ubuntu 14.04 LTS, 
+- Ruby 2.4.0
+- rvm 1.29.1
+- Rails 5.2.3
+- Sinatra 1.4.7
 
-* Ruby version
+#배포 환경
+- Heroku
 
-* System dependencies
+#사용한 SQL
+- postgresql
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#폴더 별 강의 주차 참고자료
