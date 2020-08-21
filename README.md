@@ -13,7 +13,7 @@
 #배포 환경
 - Heroku
 
-#사용한 SQL
+#사용한 RDBMS
 - postgresql
 
 #폴더 별 강의 주차 참고자료
