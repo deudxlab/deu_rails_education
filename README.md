@@ -177,13 +177,14 @@ rake db:migrate
     app
     ㄴ controllers 
           ㄴ application_controller.rb
-          ㄴ articles_controller.rb
-          ㄴ comments_controller.rb
+          ㄴ class_lists_controller.rb
+          ㄴ class_statuses_controller.rb
     ㄴ models 
-          ㄴ article.rb 
-          ㄴ comment.rb 
+          ㄴ class_list.rb 
+          ㄴ class_status.rb 
+          ㄴ user.rb 
     ㄴ views 
-          ㄴ articles 
+          ㄴ class_lists 
               ㄴ _form.html.erb 
               ㄴ _test.json.jbuilder 
               ㄴ edit.html.erb 
@@ -193,7 +194,7 @@ rake db:migrate
               ㄴ show.html.erb 
               ㄴ show.json.jbuilder
               
-          ㄴ comments 
+          ㄴ class_status
               ㄴ _form.html.erb 
               ㄴ _test.json.jbuilder 
               ㄴ edit.html.erb 
@@ -201,7 +202,10 @@ rake db:migrate
               ㄴ index.json.jbuilder 
               ㄴ new.html.erb 
               ㄴ show.html.erb 
-              ㄴ show.json.jbuilder 
+              ㄴ show.json.jbuilder
+           
+          ㄴ layouts
+              ㄴ application.html.erb 
     ㄴ config
           ㄴ routes.rb
     
@@ -227,10 +231,12 @@ rails g devise:views
 
 #user라는 이름을 가진 devise model 생성
 rails g devise user
-</code></pre>
 
 #생성한 devise user model 확정(테이블 생성)
 rake db:migrate
+</code></pre>
+
+
 
 #### N:M Scaffold 생성 시 강의 Scaffold 생성
 <pre><code>
