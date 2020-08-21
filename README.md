@@ -20,9 +20,9 @@
 
 ## 2주차
    ### app
-   ㄴ controllers
-   ㄴ apllication_controller.rb
-   ㄴ tests_controller.rb 
+   #### ㄴ controllers
+   #### ㄴ apllication_controller.rb
+   #### ㄴ tests_controller.rb 
     ㄴ models 
           ㄴ test.rb 
     ㄴ views 
