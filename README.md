@@ -15,10 +15,10 @@
 
 # 사용한 RDBMS
 - postgresql
--------------------------------------------------------------------------
-# 폴더 별 강의 주차 참고자료(2주차 부터 진행됩니다.)
 
-## 2주차, 3주차
+-------------------------------------------------------------------------
+
+## 2주차, 3주차 참고자료
     app
     ㄴ controllers 
           ㄴ application_controller.rb
@@ -40,44 +40,44 @@
           ㄴ routes.rb
     Gemfile
     
-## 2주차 터미널 명령어 모음
+### 2주차 터미널 명령어 모음
 
-### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
+#### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
 <pre><code>
 sudo service postgresql start
 </code></pre>
 
-### postgresql 환경 구축
+#### postgresql 환경 구축
 <pre><code>
 sudo apt-get update && sudo apt-get install -y libpq-dev
 </code></pre>
 
-### postgresql 설치
+#### postgresql 설치
 <pre><code>
 sudo apt update && sudo apt install postgresql postgresql-contrib
 </code></pre>
 
-### postgresql 콘솔창 실행
+#### postgresql 콘솔창 실행
 <pre><code>
 sudo -u postgres psql
 </code></pre>
 
-### postgresql 사용자 비밀번호 변경
+#### postgresql 사용자 비밀번호 변경
 <pre><code>
 alter user postgres with password 'postgres';
 </code></pre>
 
-### postgresql 콘솔창 종료
+#### postgresql 콘솔창 종료
 <pre><code>
 \q
 </code></pre>
 
-### name, age 데이터를 가진 test라는 이름의 scaffold 생성
+#### name, age 데이터를 가진 test라는 이름의 scaffold 생성
 <pre><code>
 rails g scaffold test name:string age:integer
 </code></pre>
 
-### 생성한 scaffold 확정 & 테이블 생성
+#### 생성한 scaffold 확정 & 테이블 생성
 <pre><code>
 rake db:migrate
 </code></pre>
@@ -85,17 +85,17 @@ rake db:migrate
 
 ## 3주차 터미널 명령어 모음
 
-### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
+#### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
 <pre><code>
 sudo service postgresql start
 </code></pre>
 
-### 생성된 경로정보 확인 명령어
+#### 생성된 경로정보 확인 명령어
 <pre><code>
 rake routes
 </code></pre>
 
-### DB 조작 명령어 모음
+#### DB 조작 명령어 모음
 <pre><code>
 #확정되지 않은 migration 파일 확정(테이블 생성)
 rake db:migrate
@@ -109,8 +109,10 @@ rake db:create
 #모든 migration 파일만 롤백하고 다시 migration(drop과 다르게 변경된 migration을 반영하지 않고 단순히 db내용을 다 삭제후 migration 실행)
 rake db:reset
 </code></pre>
-    
-#### 4주차  
+
+-------------------------------------------------------------------------
+
+## 4주차 
     app
     ㄴ controllers 
           ㄴ application_controller.rb
@@ -142,24 +144,24 @@ rake db:reset
     ㄴ config
           ㄴ routes.rb
     
-## 4주차 터미널 명령어 모음
+### 4주차 터미널 명령어 모음
 
-### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
+#### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
 <pre><code>
 sudo service postgresql start
 </code></pre>
 
-### 1:N Scaffold 생성 시 블로그 Scaffold 생성
+#### 1:N Scaffold 생성 시 블로그 Scaffold 생성
 <pre><code>
 rails g scaffold article title:string content:text
 </code></pre>
 
-### 1:N Scaffold 생성 시 댓글 Scaffold 생성
+#### 1:N Scaffold 생성 시 댓글 Scaffold 생성
 <pre><code>
 rails g scaffold comment comment:string article:references
 </code></pre>
 
-### 생성한 scaffold 확정 & 테이블 생성
+#### 생성한 scaffold 확정 & 테이블 생성
 <pre><code>
 rake db:migrate
 </code></pre>
