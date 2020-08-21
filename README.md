@@ -18,6 +18,12 @@
 -------------------------------------------------------------------------
 # 폴더 별 강의 주차 참고자료(2주차 부터 진행됩니다.)
 
+
+### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
+<pre><code>
+sudo service postgresql start
+</code></pre>
+
 #### 2주차, 3주차
     app
     ㄴ controllers 
@@ -42,10 +48,39 @@
     
 ## 2주차 터미널 명령어 모음
 
-### postgresql 설치
-<code>
+### postgresql 환경 구축
+<pre><code>
 sudo apt-get update && sudo apt-get install -y libpq-dev
-</code>
+</code></pre>
+
+### postgresql 설치
+<pre><code>
+sudo apt update && sudo apt install postgresql postgresql-contrib
+</code></pre>
+
+### postgresql 콘솔창 실행
+<pre><code>
+sudo -u postgres psql
+</code></pre>
+
+### postgresql 사용자 비밀번호 변경
+<pre><code>
+alter user postgres with password 'postgres';
+</code></pre>
+
+### postgresql 콘솔창 종료
+<pre><code>
+\q
+</code></pre>
+
+### name, age 데이터를 가진 test라는 이름의 scaffold 생성
+<pre><code>
+
+</code></pre>
+
+
+
+
     
 #### 3주차  
     app
