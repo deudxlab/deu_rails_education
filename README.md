@@ -4,7 +4,7 @@
 
 # 사용 환경
 - 구름IDE
-- Ubuntu 14.04 LTS, 
+- Ubuntu 14.04 LTS
 - Ruby 2.4.0
 - rvm 1.29.1
 - Rails 5.2.3
