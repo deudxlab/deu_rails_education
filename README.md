@@ -194,7 +194,7 @@ rake db:migrate
               ㄴ show.html.erb 
               ㄴ show.json.jbuilder
               
-          ㄴ class_status
+          ㄴ class_statuses
               ㄴ _form.html.erb 
               ㄴ _test.json.jbuilder 
               ㄴ edit.html.erb 
@@ -252,4 +252,73 @@ rails g scaffold class_status user:references class_list:references
 <pre><code>
 rake db:migrate
 </code></pre>
-  
+
+
+-------------------------------------------------------------------------
+
+## 6주차 참고자료
+    app
+    ㄴ assets
+          ㄴ javascripts
+              ㄴ application.js
+          ㄴ stylesheets
+              ㄴ application.scss
+    ㄴ views 
+          ㄴ class_lists 
+              ㄴ _form.html.erb 
+              ㄴ _test.json.jbuilder 
+              ㄴ edit.html.erb 
+              ㄴ index.html.erb 
+              ㄴ index.json.jbuilder 
+              ㄴ new.html.erb 
+              ㄴ show.html.erb 
+              ㄴ show.json.jbuilder
+           
+          ㄴ layouts
+              ㄴ application.html.erb 
+    ㄴ config
+          ㄴ routes.rb
+    
+### 6주차 터미널 명령어 모음
+
+#### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
+<pre><code>
+sudo service postgresql start
+</code></pre>
+
+#### git 명령어 모음
+<pre><code>
+#git 사용자 정보 설정
+git config --global user.name ＂닉네임＂ 
+git config –-global user.email 이메일
+
+#git 원격 저장소 설정 초기화
+git init
+
+#현재 폴더에 있는 모든 파일을 storage에 추가
+git add .
+
+#storage에 추가된 파일들을 지역 저장소에 추가
+git commit -m "메모할 내용 입력"
+
+#원격 저장소 위치 등록(홈페이지 주소는 원격저장소 접속시 URL과 동일합니다)
+git remote add origin 홈페이지주소
+
+#지역 저장소의 변경사항을 원격 저장소에 업로드(명령어 입력후 닉네임, 비밀번호 입력 필요)
+git push origin master
+</code></pre>
+
+#### heroku 명령어 모음
+<pre><code>
+#heroku 정보 등록
+heroku login
+
+#heroku app 저장소 등록(해당 내용은 heroku메인 - 상단 메뉴 - Dashboard - app 클릭 - Deploy 메뉴에서 확인 가능)
+heroku git:remote -a herokuapp이름
+
+#heroku git 저장소에 git 코드 업로드(해당 내용은 heroku메인 - 상단 메뉴 - Dashboard - app 클릭 - Deploy 메뉴에서 확인 가능)
+git push heroku master
+
+#heroku에 db변경사항 적용하기(최초 업로드시 또는 새로운 migration 생성 시)
+heroku run rake db:migrate
+</code></pre>
