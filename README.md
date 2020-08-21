@@ -57,6 +57,11 @@ sudo apt-get update && sudo apt-get install -y libpq-dev
 sudo apt update && sudo apt install postgresql postgresql-contrib
 </code></pre>
 
+#### gem 라이브러리 갱신(반드시 Gemfile을 저장하고 실행해야 갱신이 됩니다.)
+<pre><code>
+bundle install
+</code></pre>
+
 #### postgresql 콘솔창 실행
 <pre><code>
 sudo -u postgres psql
@@ -112,7 +117,7 @@ rake db:reset
 
 -------------------------------------------------------------------------
 
-## 4주차 
+## 4주차 참고자료
     app
     ㄴ controllers 
           ㄴ application_controller.rb
@@ -166,5 +171,79 @@ rails g scaffold comment comment:string article:references
 rake db:migrate
 </code></pre>
       
-   
+-------------------------------------------------------------------------
+
+## 5주차 참고자료
+    app
+    ㄴ controllers 
+          ㄴ application_controller.rb
+          ㄴ articles_controller.rb
+          ㄴ comments_controller.rb
+    ㄴ models 
+          ㄴ article.rb 
+          ㄴ comment.rb 
+    ㄴ views 
+          ㄴ articles 
+              ㄴ _form.html.erb 
+              ㄴ _test.json.jbuilder 
+              ㄴ edit.html.erb 
+              ㄴ index.html.erb 
+              ㄴ index.json.jbuilder 
+              ㄴ new.html.erb 
+              ㄴ show.html.erb 
+              ㄴ show.json.jbuilder
+              
+          ㄴ comments 
+              ㄴ _form.html.erb 
+              ㄴ _test.json.jbuilder 
+              ㄴ edit.html.erb 
+              ㄴ index.html.erb 
+              ㄴ index.json.jbuilder 
+              ㄴ new.html.erb 
+              ㄴ show.html.erb 
+              ㄴ show.json.jbuilder 
+    ㄴ config
+          ㄴ routes.rb
+    
+### 5주차 터미널 명령어 모음
+
+#### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
+<pre><code>
+sudo service postgresql start
+</code></pre>
+
+#### gem 라이브러리 갱신(반드시 Gemfile을 저장하고 실행해야 갱신이 됩니다.)
+<pre><code>
+bundle install
+</code></pre>
+
+#### Devise gem 라이브러리 다운 후 환경 구축
+<pre><code>
+#devise 설치
+rails g devise:install
+
+#devise view폴더, 파일 생성
+rails g devise:views
+
+#user라는 이름을 가진 devise model 생성
+rails g devise user
+</code></pre>
+
+#생성한 devise user model 확정(테이블 생성)
+rake db:migrate
+
+#### N:M Scaffold 생성 시 강의 Scaffold 생성
+<pre><code>
+rails g scaffold class_list c_name:string c_account:integer
+</code></pre>
+
+#### N:M Scaffold 생성 시 강의현황 Scaffold 생성
+<pre><code>
+rails g scaffold class_status user:references class_list:references
+</code></pre>
+
+#### 생성한 scaffold 확정 & 테이블 생성
+<pre><code>
+rake db:migrate
+</code></pre>
   
