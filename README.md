@@ -19,10 +19,10 @@
 # 폴더 별 강의 주차 참고자료(2주차 부터 진행됩니다.)
 
 ## 2주차
-   ### app
-   #### ㄴ controllers
-   #### ㄴ apllication_controller.rb
-   #### ㄴ tests_controller.rb 
+   #### app 
+    ㄴ controllers 
+          ㄴ application_controller.rb
+          ㄴ tests_controller.rb
     ㄴ models 
           ㄴ test.rb 
     ㄴ views 
@@ -35,14 +35,12 @@
               ㄴ new.html.erb 
               ㄴ show.html.erb 
               ㄴ show.json.jbuilder 
+    ㄴ config
+          ㄴ database.yml
+          ㄴ routes.rb
+    Gemfile
     
-   config 
-      ㄴ database.yml 
-      ㄴ routes.rb 
- 
-       
-   Gemfile 
-   
+asdfasdfasdfsadfasdf
     
       
    
