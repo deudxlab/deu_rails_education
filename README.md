@@ -66,11 +66,6 @@ Bootstrap 활용, Heroku로 5주차에 만든 프로젝트 온라인 배포해�
     
 ### 2주차 터미널 명령어 모음
 
-#### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
-<pre><code>
-sudo service postgresql start
-</code></pre>
-
 #### postgresql 환경 구축
 <pre><code>
 sudo apt-get update && sudo apt-get install -y libpq-dev
@@ -84,6 +79,11 @@ sudo apt update && sudo apt install postgresql postgresql-contrib
 #### gem 라이브러리 갱신(반드시 Gemfile을 저장하고 실행해야 갱신이 됩니다.)
 <pre><code>
 bundle install
+</code></pre>
+
+#### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
+<pre><code>
+sudo service postgresql start
 </code></pre>
 
 #### postgresql 콘솔창 실행
