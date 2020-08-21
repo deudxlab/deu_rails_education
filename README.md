@@ -43,10 +43,9 @@
 ## 2주차 터미널 명령어 모음
 
 ### postgresql 설치
-
-<pre><code>
+<code>
 sudo apt-get update && sudo apt-get install -y libpq-dev
-</code></pre>
+</code>
     
 #### 3주차  
     app
