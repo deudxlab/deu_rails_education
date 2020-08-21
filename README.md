@@ -18,13 +18,7 @@
 -------------------------------------------------------------------------
 # 폴더 별 강의 주차 참고자료(2주차 부터 진행됩니다.)
 
-
-### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
-<pre><code>
-sudo service postgresql start
-</code></pre>
-
-#### 2주차, 3주차
+## 2주차, 3주차
     app
     ㄴ controllers 
           ㄴ application_controller.rb
@@ -47,6 +41,11 @@ sudo service postgresql start
     Gemfile
     
 ## 2주차 터미널 명령어 모음
+
+### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
+<pre><code>
+sudo service postgresql start
+</code></pre>
 
 ### postgresql 환경 구축
 <pre><code>
@@ -75,7 +74,7 @@ alter user postgres with password 'postgres';
 
 ### name, age 데이터를 가진 test라는 이름의 scaffold 생성
 <pre><code>
-
+rails g scaffold test name:string age:integer
 </code></pre>
 
 
