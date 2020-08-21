@@ -85,6 +85,11 @@ rake db:migrate
 
 ## 3주차 터미널 명령어 모음
 
+### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
+<pre><code>
+sudo service postgresql start
+</code></pre>
+
 ### 생성된 경로정보 확인 명령어
 <pre><code>
 rake routes
@@ -109,11 +114,23 @@ rake db:reset
     app
     ㄴ controllers 
           ㄴ application_controller.rb
-          ㄴ tests_controller.rb
+          ㄴ articles_controller.rb
+          ㄴ comments_controller.rb
     ㄴ models 
-          ㄴ test.rb 
+          ㄴ article.rb 
+          ㄴ comment.rb 
     ㄴ views 
-          ㄴ tests 
+          ㄴ articles 
+              ㄴ _form.html.erb 
+              ㄴ _test.json.jbuilder 
+              ㄴ edit.html.erb 
+              ㄴ index.html.erb 
+              ㄴ index.json.jbuilder 
+              ㄴ new.html.erb 
+              ㄴ show.html.erb 
+              ㄴ show.json.jbuilder
+              
+          ㄴ comments 
               ㄴ _form.html.erb 
               ㄴ _test.json.jbuilder 
               ㄴ edit.html.erb 
@@ -123,11 +140,29 @@ rake db:reset
               ㄴ show.html.erb 
               ㄴ show.json.jbuilder 
     ㄴ config
-          ㄴ database.yml
           ㄴ routes.rb
-    Gemfile
     
-    
+## 4주차 터미널 명령어 모음
+
+### postgresql 설치 이후 구름IDE를 실행 할때마다 입력해야할 문구(postgresql 서버를 실행해야 합니다.)
+<pre><code>
+sudo service postgresql start
+</code></pre>
+
+### 1:N Scaffold 생성 시 블로그 Scaffold 생성
+<pre><code>
+rails g scaffold article title:string content:text
+</code></pre>
+
+### 1:N Scaffold 생성 시 댓글 Scaffold 생성
+<pre><code>
+rails g scaffold comment comment:string article:references
+</code></pre>
+
+### 생성한 scaffold 확정 & 테이블 생성
+<pre><code>
+rake db:migrate
+</code></pre>
       
    
   
