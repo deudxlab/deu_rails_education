@@ -111,6 +111,11 @@ rails g scaffold test name:string age:integer
 rake db:migrate
 </code></pre>
 
+#### 생성한 scaffold의 데이터 입력시 토큰값 에러를 해결하는 코드
+<pre><code>
+skip_before_action :verify_authenticity_token
+</code></pre>
+
 
 ## 3주차 터미널 명령어 모음
 
