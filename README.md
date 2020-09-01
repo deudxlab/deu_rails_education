@@ -321,6 +321,88 @@ rails g scaffold class_status user:references class_list:references
 rake db:migrate
 </code></pre>
 
+#### 강의 리스트 수정
+<pre><code>
+#app/views/class_lists/index.html.erb 파일에 기입
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>강의명</th>
+      <th>수강인원현황</th>
+	  <th>비고</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @class_lists.each do |class_list| %>
+      <tr>
+        <td><%= class_list.c_name %></td>
+        <td><%= ClassStatus.where(class_list_id: class_list.id).size %> / <%= class_list.c_account %></td>
+		<td><%= button_to "강의신청", class_statuses_path(class_status: { user_id: current_user.id, class_list_id: class_list.id } ) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</code></pre>
+
+#### 강의 중복 신청, 수강인원 초과 신청 불가 기능 추가
+<pre><code>
+#app/controllers/class_statuses_controller.rb 파일의 create action에 기입
+
+ @class_status = ClassStatus.new(class_status_params)
+	user_id = @class_status.user_id
+	class_id = @class_status.class_list_id
+	@class_status_overlap = ClassStatus.where(user_id: user_id, class_list_id: class_id).size
+	@class_status_size = ClassStatus.where(class_list_id: class_id).size
+	puts "현재 사이즈 수 : #{@class_status_overlap}"
+	puts "유저ID : #{user_id}"
+	puts "강의ID : #{class_id}"
+    respond_to do |format|
+      if @class_status_overlap > 0
+		 format.html { redirect_to root_path, notice: '중복신청은 되지 않습니다.' }
+		  
+	  elsif @class_status_size >= ClassList.find(class_id).c_account
+		  format.html { redirect_to root_path, notice: '수강인원을 초과할수 없습니다.' }
+		  
+	  else 
+		@class_status.save
+        format.html { redirect_to root_path, notice: '강의 신청이 완료되었습니다.' }
+      end
+    end
+
+</code></pre>
+
+#### 신청한 강의 리스트 보기
+<pre><code>
+#app/views/class_lists/index.html.erb 파일에 기입
+
+<h1>내가 신청한 강의목록</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>강의 명</th>
+      <th>수강인원 현황</th>
+	  <th>비고</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_class_lists.each do |class_list| %>
+      <tr>
+        <td><%= ClassList.find(class_list.class_list_id).c_name %></td>
+        <td><%= ClassList.find(class_list.class_list_id).c_account %></td>
+		<td><%= link_to "신청취소", class_status_path(id: class_list.id), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+    
+</code></pre>
+
 
 -------------------------------------------------------------------------
 
