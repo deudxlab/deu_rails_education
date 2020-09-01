@@ -280,7 +280,31 @@ rails g devise user
 rake db:migrate
 </code></pre>
 
+#### 로그인이 되어 있지 않을 때 로그인 화면으로 강제 이동
+<pre><code>
+#app/controllers/application_controller.rb 파일에 기입
 
+before_action :authenticate_user!
+</code></pre>
+
+#### 로그인 기능 활용하기 위한 상단 nav 바 만들기
+<pre><code>
+#app/views/layouts/application.html.erb 파일에 기입
+
+<div>
+    <% if user_signed_in? %>
+      <%= link_to "회원정보", edit_user_registration_path %> |
+      <%= link_to "로그아웃", destroy_user_session_path, method: :delete %> |
+      아이디 : <%= current_user.email %> |
+      유저 No. : <%= current_user.id %>
+    <% else %>
+      <%= link_to "로그인", user_session_path %>
+      <%= link_to "회원가입", "/users/sign_up" %>
+    <% end %>
+</div>
+<hr/>
+
+</code></pre>
 
 #### N:M Scaffold 생성 시 강의 Scaffold 생성
 <pre><code>
