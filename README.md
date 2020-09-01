@@ -202,6 +202,18 @@ rails g scaffold comment comment:string article:references
 <pre><code>
 rake db:migrate
 </code></pre>
+
+#### 댓글 목록을 표시하는데 이용되는 코드 수정 결과
+<pre><code>
+#app/views/articles/index.html.erb 에 기입 
+
+<h4>댓글 <%= @comments.size %> 개 </h4>
+<ul>
+    <% @comments.each do |comment| %>
+        <li><%= comment.comment %></li>
+    <% end %>
+</ul>
+</code></pre>
       
 -------------------------------------------------------------------------
 
