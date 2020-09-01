@@ -113,6 +113,9 @@ rake db:migrate
 
 #### 생성한 scaffold의 데이터 입력시 토큰값 에러를 해결하는 코드
 <pre><code>
+#app/controllers/application_controller.rb에 기입
+
+
 skip_before_action :verify_authenticity_token
 </code></pre>
 
