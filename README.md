@@ -289,21 +289,7 @@ before_action :authenticate_user!
 
 #### 로그인 기능 활용하기 위한 상단 nav 바 만들기
 <pre><code>
-#app/views/layouts/application.html.erb 파일에 기입
-
-<div>
-    <% if user_signed_in? %>
-      <%= link_to "회원정보", edit_user_registration_path %> |
-      <%= link_to "로그아웃", destroy_user_session_path, method: :delete %> |
-      아이디 : <%= current_user.email %> |
-      유저 No. : <%= current_user.id %>
-    <% else %>
-      <%= link_to "로그인", user_session_path %>
-      <%= link_to "회원가입", "/users/sign_up" %>
-    <% end %>
-</div>
-<hr/>
-
+#git저장소의 app/views/layouts/application.erb 파일 참조 부탁드립니다.
 </code></pre>
 
 #### N:M Scaffold 생성 시 강의 Scaffold 생성
@@ -323,29 +309,7 @@ rake db:migrate
 
 #### 강의 리스트 수정
 <pre><code>
-#app/views/class_lists/index.html.erb 파일에 기입
-
-
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>강의명</th>
-      <th>수강인원현황</th>
-	  <th>비고</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @class_lists.each do |class_list| %>
-      <tr>
-        <td><%= class_list.c_name %></td>
-        <td><%= ClassStatus.where(class_list_id: class_list.id).size %> / <%= class_list.c_account %></td>
-		<td><%= button_to "강의신청", class_statuses_path(class_status: { user_id: current_user.id, class_list_id: class_list.id } ) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+#git저장소의 app/views/class_lists/index.html.erb 파일 참조 부탁드립니다.
 </code></pre>
 
 #### 강의 중복 신청, 수강인원 초과 신청 불가 기능 추가
