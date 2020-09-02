@@ -341,30 +341,7 @@ rake db:migrate
 
 #### 신청한 강의 리스트 보기
 <pre><code>
-#app/views/class_lists/index.html.erb 파일에 기입
-
-<h1>내가 신청한 강의목록</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>강의 명</th>
-      <th>수강인원 현황</th>
-	  <th>비고</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @my_class_lists.each do |class_list| %>
-      <tr>
-        <td><%= ClassList.find(class_list.class_list_id).c_name %></td>
-        <td><%= ClassList.find(class_list.class_list_id).c_account %></td>
-		<td><%= link_to "신청취소", class_status_path(id: class_list.id), method: :delete %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-    
+#git저장소의 app/views/class_lists/index.html.erb 파일을 참조 부탁드립니다.
 </code></pre>
 
 
@@ -424,7 +401,7 @@ git push origin master
 
 #### heroku 명령어 모음
 <pre><code>
-#heroku 정보 등록
+#heroku 정보 등록(만약 작동되지 않는 다면 heroku login -i 명령어 사용)
 heroku login
 
 #heroku app 저장소 등록(해당 내용은 heroku메인 - 상단 메뉴 - Dashboard - app 클릭 - Deploy 메뉴에서 확인 가능)
